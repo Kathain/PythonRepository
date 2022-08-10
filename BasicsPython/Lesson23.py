@@ -14,3 +14,7 @@ set_from_list.add(777)
 set_from_tuples.add('helllooo')
 print(set_from_list)
 print(set_from_tuples)
+
+set_from_list.pop()
+print(set_from_list)
+
