@@ -1,15 +1,23 @@
-class Counter:
-    counter = 0
+class Point:
+    ant = False
+    def set_coordinates(self, x, y):
+        self.x = x
+        self.y = y
 
-    def start_from(self, x=0):
-        if x != 0:
-            self.counter = x
+    def get_distance(self, obj):
+        if isinstance(obj, Point):
+            ant = True
+            if ant is True:
+                res1 = ((self.x - obj.x) ** 2 + (self.y - obj.x) ** 2) ** 0.5
+                return res1
+            else:
+                print('Передана не точка')
 
-    def increment(self):
-        self.counter+=1
+if __name__ == '__main__':
+    p1 = Point()
+    p2 = Point()
+    p1.set_coordinates(1, 2)
+    p2.set_coordinates(4, 6)
+    d = p1.get_distance(p2)  # вернёт 5.0
+    p1.get_distance(10)  # Распечатает "Передана не точка"
 
-    def display(self):
-        print('Текущее значение счетчика =', self.counter)
-
-    def reset(self):
-        self.counter = 0
